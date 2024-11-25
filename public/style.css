@@ -1,0 +1,130 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Background and Centering */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #4a90e2, #9013fe);
+    color: #333;
+    font-size: 16px;
+}
+
+/* Chat Container */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Messages Area */
+#messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#messages div {
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 14px;
+    max-width: 70%;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+/* Differentiate Sent vs Received Messages */
+#messages div:nth-child(odd) {
+    align-self: flex-start;
+    background: #e0f7fa;
+    color: #00796b;
+}
+
+#messages div:nth-child(even) {
+    align-self: flex-end;
+    background: #ede7f6;
+    color: #5e35b1;
+}
+
+/* Input Form */
+#chat-form {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    background: #fff;
+    gap: 10px;
+}
+
+#message-input {
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+#message-input:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+/* Send Button */
+button {
+    padding: 10px 20px;
+    font-size: 14px;
+    background: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #357ABD;
+}
+
+/* Scrollbar Styling for Messages */
+#messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+#messages::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 4px;
+}
+
+#messages::-webkit-scrollbar-thumb:hover {
+    background: #bbb;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 600px) {
+    #message-input {
+        font-size: 12px;
+    }
+
+    button {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+}
+
